@@ -22,7 +22,7 @@ const brands = [
 
 const SocialProofSection = () => {
   return (
-    <section className="py-20 px-4">
+    <section id="marcas" className="py-20 px-4">
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-extrabold tracking-wider text-primary">
           MARCAS QUE CONFIAM NA ARTE ARENA
