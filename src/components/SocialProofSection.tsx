@@ -6,6 +6,8 @@ import corinthians from "@/assets/brands/corinthians.png";
 import ambev from "@/assets/brands/ambev.png";
 import puma from "@/assets/brands/puma.png";
 import adidas from "@/assets/brands/adidas.png";
+import mcdonalds from "@/assets/brands/mcdonalds.png";
+import f1 from "@/assets/brands/f1.png";
 
 const brands = [
   { name: "Palmeiras", logo: palmeiras },
@@ -16,8 +18,8 @@ const brands = [
   { name: "Ambev", logo: ambev },
   { name: "Puma", logo: puma },
   { name: "Adidas", logo: adidas },
-  { name: "Em breve", logo: null },
-  { name: "Em breve", logo: null },
+  { name: "McDonald's", logo: mcdonalds },
+  { name: "F1", logo: f1 },
 ];
 
 const SocialProofSection = () => {
@@ -29,19 +31,13 @@ const SocialProofSection = () => {
         </h2>
       </div>
 
-      <div className="max-w-4xl mx-auto grid grid-cols-5 gap-6">
+      <div className="max-w-5xl mx-auto grid grid-cols-5 gap-6">
         {brands.map((brand, i) => (
           <div
             key={i}
-            className="w-20 h-20 mx-auto rounded-full bg-foreground/90 border border-border flex items-center justify-center overflow-hidden"
+            className="w-28 h-28 md:w-36 md:h-36 mx-auto rounded-2xl bg-white border border-border flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_hsl(24_95%_53%/0.3)] cursor-pointer"
           >
-            {brand.logo ? (
-              <img src={brand.logo} alt={brand.name} className="w-14 h-14 object-contain" />
-            ) : (
-              <span className="text-xs font-bold text-muted-foreground text-center leading-tight px-1">
-                {brand.name}
-              </span>
-            )}
+            <img src={brand.logo} alt={brand.name} className="w-20 h-20 md:w-28 md:h-28 object-contain" />
           </div>
         ))}
       </div>
