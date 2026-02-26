@@ -1,8 +1,13 @@
 import { Instagram, Facebook, MapPin, Building2 } from "lucide-react";
+import logo from "@/assets/logo-arte-arena.png";
 
 const Footer = () => {
   return (
     <footer className="border-t border-border py-12 px-4 mt-10">
+      <div className="max-w-5xl mx-auto flex flex-col items-center mb-10">
+        <img src={logo} alt="Arte Arena" className="h-16 object-contain" />
+      </div>
+
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
         <div>
           <h4 className="font-extrabold text-primary text-xl mb-4">ARTE ARENA</h4>
