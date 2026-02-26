@@ -24,8 +24,11 @@ const MultiStepForm = () => {
     return digits;
   };
 
+  const quantityNum = parseInt(quantity);
+  const quantityError = quantity !== "" && quantityNum < 10;
+
   const canNext = () => {
-    if (step === 1) return parseInt(quantity) > 0;
+    if (step === 1) return quantityNum >= 10;
     if (step === 2) return kit !== "";
     if (step === 3) return true;
     if (step === 4) return cep.replace(/\D/g, "").length === 8;
@@ -36,12 +39,12 @@ const MultiStepForm = () => {
     const msg = encodeURIComponent(
       `Olá! Gostaria de um orçamento para ${quantity} unidades de ${kitLabels[kit as KitOption]} com ${sponsors} patrocinadores. Meu CEP é ${cep}.`
     );
-    window.open(`https://wa.me/5511999999999?text=${msg}`, "_blank");
+    window.open(`https://wa.me/5511934881548?text=${msg}`, "_blank");
   };
 
   return (
     <section id="formulario" className="py-20 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-2">
           Monte seu <span className="text-primary text-glow">Orçamento</span>
         </h2>
@@ -61,7 +64,7 @@ const MultiStepForm = () => {
           ))}
         </div>
 
-        <div className="bg-card border border-border rounded-2xl p-8 md:p-10 min-h-[320px] flex flex-col justify-between">
+        <div className="bg-card border border-border rounded-2xl p-10 min-h-[320px] flex flex-col justify-between">
           {/* Step 1 */}
           {step === 1 && (
             <div className="flex-1">
@@ -70,12 +73,22 @@ const MultiStepForm = () => {
               </label>
               <input
                 type="number"
-                min={1}
+                min={10}
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
                 placeholder="Ex: 22"
-                className="w-full bg-muted border border-border rounded-lg px-5 py-4 text-2xl font-bold text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition"
+                className={`w-full bg-muted border rounded-lg px-5 py-4 text-2xl font-bold text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition ${
+                  quantityError ? "border-destructive" : "border-border"
+                }`}
               />
+              {quantityError && (
+                <p className="text-destructive text-sm mt-2 font-semibold">
+                  O pedido mínimo é de 10 unidades.
+                </p>
+              )}
+              <p className="text-muted-foreground text-xs mt-2">
+                Pedido mínimo: 10 unidades
+              </p>
             </div>
           )}
 
@@ -173,9 +186,9 @@ const MultiStepForm = () => {
               <button
                 onClick={sendWhatsApp}
                 disabled={!canNext()}
-                className="flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-bold text-lg animate-pulse-glow hover:scale-105 transition-transform disabled:opacity-40 disabled:animate-none disabled:hover:scale-100"
+                className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-bold text-sm animate-pulse-glow hover:scale-105 transition-transform disabled:opacity-40 disabled:animate-none disabled:hover:scale-100"
               >
-                <MessageCircle className="w-6 h-6" />
+                <MessageCircle className="w-5 h-5" />
                 SOLICITAR ORÇAMENTO NO WHATSAPP
               </button>
             )}

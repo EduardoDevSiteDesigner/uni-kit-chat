@@ -15,8 +15,8 @@
     --popover: 220 10% 12%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 50 100% 50%;
-    --primary-foreground: 220 10% 8%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 220 10% 16%;
     --secondary-foreground: 0 0% 85%;
@@ -24,29 +24,29 @@
     --muted: 220 8% 18%;
     --muted-foreground: 220 8% 55%;
 
-    --accent: 50 100% 50%;
-    --accent-foreground: 220 10% 8%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 10% 20%;
     --input: 220 10% 20%;
-    --ring: 50 100% 50%;
+    --ring: 24 95% 53%;
 
     --radius: 0.75rem;
 
-    --neon-glow: 0 0 20px hsl(50 100% 50% / 0.4), 0 0 60px hsl(50 100% 50% / 0.1);
-    --neon-glow-strong: 0 0 20px hsl(50 100% 50% / 0.6), 0 0 80px hsl(50 100% 50% / 0.2);
+    --neon-glow: 0 0 20px hsl(24 95% 53% / 0.4), 0 0 60px hsl(24 95% 53% / 0.1);
+    --neon-glow-strong: 0 0 20px hsl(24 95% 53% / 0.6), 0 0 80px hsl(24 95% 53% / 0.2);
 
     --sidebar-background: 220 10% 8%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 50 100% 50%;
-    --sidebar-primary-foreground: 220 10% 8%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 10% 16%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 220 10% 20%;
-    --sidebar-ring: 50 100% 50%;
+    --sidebar-ring: 24 95% 53%;
   }
 }
 
@@ -68,7 +68,7 @@
     box-shadow: var(--neon-glow-strong);
   }
   .text-glow {
-    text-shadow: 0 0 20px hsl(50 100% 50% / 0.5);
+    text-shadow: 0 0 20px hsl(24 95% 53% / 0.5);
   }
 }
 
