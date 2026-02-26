@@ -1,5 +1,4 @@
 import heroBg from "@/assets/hero-bg-new.png";
-import logoTotem from "@/assets/logo-totem-sports.png";
 
 const HeroSection = () => {
   const scrollToForm = () => {
@@ -18,15 +17,6 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-background/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-      </div>
-
-      {/* Logo */}
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20">
-        <img
-          src={logoTotem}
-          alt="Totem Sports"
-          className="h-10 md:h-12 w-auto invert brightness-200"
-        />
       </div>
 
       {/* Content */}
