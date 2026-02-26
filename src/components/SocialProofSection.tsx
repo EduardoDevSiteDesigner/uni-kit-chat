@@ -31,13 +31,13 @@ const SocialProofSection = () => {
         </h2>
       </div>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-5 gap-6">
+      <div className="max-w-5xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 md:gap-6">
         {brands.map((brand, i) => (
           <div
             key={i}
-            className="w-28 h-28 md:w-36 md:h-36 mx-auto rounded-2xl bg-white border border-border flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_hsl(24_95%_53%/0.3)] cursor-pointer"
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto rounded-2xl bg-white border border-border flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_hsl(24_95%_53%/0.3)] cursor-pointer"
           >
-            <img src={brand.logo} alt={brand.name} className="w-20 h-20 md:w-28 md:h-28 object-contain" />
+            <img src={brand.logo} alt={brand.name} className="w-14 h-14 sm:w-18 sm:h-18 md:w-28 md:h-28 object-contain" />
           </div>
         ))}
       </div>
