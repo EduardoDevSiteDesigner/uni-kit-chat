@@ -4,15 +4,21 @@ import MultiStepForm from "@/components/MultiStepForm";
 import SimulatorBanner from "@/components/SimulatorBanner";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { useScrollFadeIn } from "@/hooks/use-scroll-fade-in";
+
+const FadeSection = ({ children }: { children: React.ReactNode }) => {
+  const { ref, className } = useScrollFadeIn();
+  return <div ref={ref} className={`transition-all duration-700 ${className}`}>{children}</div>;
+};
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
-      <SocialProofSection />
-      <MultiStepForm />
-      <SimulatorBanner />
-      <ContactSection />
+      <FadeSection><SocialProofSection /></FadeSection>
+      <FadeSection><MultiStepForm /></FadeSection>
+      <FadeSection><SimulatorBanner /></FadeSection>
+      <FadeSection><ContactSection /></FadeSection>
       <Footer />
     </div>
   );
