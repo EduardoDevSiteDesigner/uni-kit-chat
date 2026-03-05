@@ -15,6 +15,7 @@ const MultiStepForm = () => {
   const [kit, setKit] = useState<KitOption | "">("");
   const [sponsors, setSponsors] = useState(0);
   const [cep, setCep] = useState("");
+  const [formStarted, setFormStarted] = useState(false);
 
   const totalSteps = 4;
 
@@ -36,6 +37,13 @@ const MultiStepForm = () => {
   };
 
   const sendWhatsApp = () => {
+    if (typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Lead', {
+        content_name: kitLabels[kit as KitOption],
+        value: quantityNum,
+        currency: 'BRL',
+      });
+    }
     const msg = encodeURIComponent(
       `Olá! Gostaria de um orçamento para ${quantity} unidades de ${kitLabels[kit as KitOption]} com ${sponsors} patrocinadores. Meu CEP é ${cep}.`
     );
@@ -75,7 +83,15 @@ const MultiStepForm = () => {
                 type="number"
                 min={10}
                 value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
+                onChange={(e) => {
+                  if (!formStarted) {
+                    setFormStarted(true);
+                    if (typeof (window as any).fbq === 'function') {
+                      (window as any).fbq('track', 'InitiateCheckout');
+                    }
+                  }
+                  setQuantity(e.target.value);
+                }}
                 placeholder="Ex: 22"
                 className={`w-full bg-muted border rounded-lg px-5 py-4 text-2xl font-bold text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition ${
                   quantityError ? "border-destructive" : "border-border"
