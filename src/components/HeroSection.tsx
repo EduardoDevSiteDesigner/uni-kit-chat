@@ -20,8 +20,8 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-24">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-6">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16 md:mt-24">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-4 md:mb-6">
           Uniformes Esportivos de{" "}
           <span className="text-primary text-glow">Alta Performance</span>{" "}
           para o seu Time.

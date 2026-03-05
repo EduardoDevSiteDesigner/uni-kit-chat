@@ -3,7 +3,7 @@ import { ExternalLink } from "lucide-react";
 const SimulatorBanner = () => {
   return (
     <section id="simulador" className="py-16 px-4">
-      <div className="max-w-3xl mx-auto bg-card border border-border rounded-2xl p-10 text-center">
+      <div className="max-w-3xl mx-auto bg-card border border-border rounded-2xl p-6 sm:p-10 text-center">
         <h3 className="text-2xl md:text-3xl font-extrabold mb-3">
           Ainda na dúvida sobre a arte do seu uniforme?
         </h3>

@@ -97,7 +97,7 @@ const MultiStepForm = () => {
               ))}
             </div>
 
-            <div className="bg-card border border-border rounded-2xl p-10 min-h-[320px] flex flex-col justify-between">
+            <div className="bg-card border border-border rounded-2xl p-5 sm:p-10 min-h-[320px] flex flex-col justify-between">
               {/* Step 1 */}
               {step === 1 && (
                 <div className="flex-1">
@@ -219,10 +219,10 @@ const MultiStepForm = () => {
                   <button
                     onClick={sendWhatsApp}
                     disabled={!canNext()}
-                    className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-bold text-sm animate-pulse-glow hover:scale-105 transition-transform disabled:opacity-40 disabled:animate-none disabled:hover:scale-100"
+                    className="flex items-center gap-2 px-4 sm:px-6 py-3 bg-primary text-primary-foreground rounded-lg font-bold text-xs sm:text-sm animate-pulse-glow hover:scale-105 transition-transform disabled:opacity-40 disabled:animate-none disabled:hover:scale-100"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    SOLICITAR ORÇAMENTO NO WHATSAPP
+                    <MessageCircle className="w-5 h-5 shrink-0" />
+                    <span className="whitespace-nowrap">SOLICITAR ORÇAMENTO</span>
                   </button>
                 )}
               </div>
