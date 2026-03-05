@@ -2,7 +2,7 @@ import { Mail, MessageCircle, MapPin, Instagram, Facebook, Linkedin, Youtube } f
 
 const ContactSection = () => {
   return (
-    <section id="contato" className="py-20 px-4">
+    <section id="contato" className="py-12 sm:py-20 px-4">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12">
           FALE COM A <span className="text-primary text-glow">ARTE ARENA</span>
