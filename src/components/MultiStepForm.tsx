@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Shirt, ChevronRight, ChevronLeft, MessageCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 type KitOption = "camisa" | "camisa_calcao" | "conjunto";
 
@@ -36,10 +37,19 @@ const MultiStepForm = () => {
     return false;
   };
 
-  const sendWhatsApp = () => {
+  const sendWhatsApp = async () => {
     const msg = encodeURIComponent(
       `Olá! Gostaria de um orçamento para ${quantity} unidades de ${kitLabels[kit as KitOption]} com ${sponsors} patrocinadores. Meu CEP é ${cep}.`
     );
+
+    // Save lead to database
+    await supabase.from("leads").insert({
+      quantity: quantityNum,
+      kit: kit as string,
+      sponsors,
+      cep,
+    });
+
     setSubmitted(true);
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead', {
