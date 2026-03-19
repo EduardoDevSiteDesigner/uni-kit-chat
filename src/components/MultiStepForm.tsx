@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Shirt, ChevronRight, ChevronLeft, MessageCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 type KitOption = "camisa" | "camisa_calcao" | "conjunto";
 
