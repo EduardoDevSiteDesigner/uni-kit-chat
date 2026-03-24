@@ -29,8 +29,8 @@ const ContactSection = () => {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">WhatsApp</p>
-              <a href="https://wa.me/5511934881548" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition">
-                +55 11 93488-1548
+              <a href="https://wa.me/5511958339942" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition">
+                +55 11 95833-9942
               </a>
             </div>
           </div>

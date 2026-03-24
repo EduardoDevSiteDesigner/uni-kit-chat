@@ -82,7 +82,7 @@ const MultiStepForm = () => {
               Siga com o atendimento com a nossa equipe comercial via WhatsApp. Você será redirecionado em instantes...
             </p>
             <a
-              href={`https://wa.me/5511934881548?text=${encodeURIComponent(
+              href={`https://wa.me/5511958339942?text=${encodeURIComponent(
                 `Olá! Gostaria de um orçamento para ${quantity} unidades de ${kitLabels[kit as KitOption]} com ${sponsors} patrocinadores. Meu CEP é ${cep}.`
               )}`}
               target="_blank"
