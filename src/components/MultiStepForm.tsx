@@ -58,7 +58,7 @@ const MultiStepForm = () => {
       });
     }
     setTimeout(() => {
-      window.open(`https://wa.me/5511934881548?text=${msg}`, "_blank");
+      window.open(`https://wa.me/5511958339942?text=${msg}`, "_blank");
     }, 2000);
   };
 
